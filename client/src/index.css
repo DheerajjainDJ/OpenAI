@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+@media screen and (min-width: 480px) {
+    .card:nth-child(7n + 1) {
+        grid-column: auto/span 2;
+        grid-row: auto/span 2;
+    }
+}
+
+.prompt::-webkit-scrollbar {
+    width: 5px;
+}
+
+.prompt::-webkit-scrollbar-thumb {
+    background-color: #666e75;
+    border-radius: 5px;
+}
+
+.first_div {
+    animation:showFromLeft 1s ease-in-out;
+}
+
+.second_div {
+    animation:showFromRight 1s ease-in-out;
+}
+
+@keyframes showFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes showFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes showFromTop {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes showFromBottom {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@media (max-width:768px) {
+    .first_div {
+        animation: showFromTop 1s ease-in-out;
+    }
+
+    .second_div {
+        animation: showFromBottom 1s ease-in-out;
+    }
+}
