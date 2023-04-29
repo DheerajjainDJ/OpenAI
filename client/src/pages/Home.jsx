@@ -13,12 +13,12 @@ const Home = () => {
   return (
     <>
       <section className="bg-gray-900 text-white">
-        <div className="max-w-6xl mx-auto p-7 flex flex-col-reverse dark:bg-gray-900 dark:text-white  space-y-5 gap-4 md:flex-row md:space-y-0">
-          <div className="text-white first_div text-center sm:text-left flex flex-col justify-center space-y-7 leading-normal dark:text-white md:w-1/2">
-            <h3 className="text-3xl md:text-5xl tracking-wide md:max-w-lg font-bold text-center md:text-left">
+        <div className="max-w-6xl mx-auto py-12 p-7 flex flex-col-reverse dark:bg-gray-900 dark:text-white space-y-5 gap-4 md:flex-row md:space-y-0">
+          <div className="text-white first_div text-center sm:text-left flex flex-col justify-center space-y-8 leading-normal dark:text-white md:w-1/2">
+            <h3 className="text-3xl md:text-5xl md:max-w-lg font-semibold text-center md:text-left">
               Convert text to image with an AI image generator
             </h3>
-            <p className="text-lg md:max-w-md font-medium tracking-wide leading-snug text-center md:text-left">
+            <p className="text-lg md:max-w-md font-medium leading-snug text-center md:text-left">
               Create amazing artwork by yourself by using the power of AI image
               generator. Turn your imagination into mesmerizing artwork in mere
               seconds.
@@ -32,7 +32,7 @@ const Home = () => {
               </button>
             </div>
           </div>
-          <div className="second_div md:w-1/2">
+          <div className="second_div flex items-center md:w-1/2">
             <img
               src={Ai_image}
               loading="lazy"
@@ -42,24 +42,24 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section>
-        <div className="max-w-6xl mx-auto mt-5 p-5 flex flex-col gap-4 md:flex-row">
-          <div className="md:w-1/2">
-            <div className="flex justify-center md:justify-start">
-              <img
-                src={app_screen}
-                alt="app_screen"
-                loading="lazy"
-                className="w-10/12 h-1/3 md:w-auto md:h-auto rounded-lg shadow-lg object-contain"
-              />
-            </div>
+      <section className="bg-slate-200 dark:bg-gray-800 dark:text-white">
+        <div className="max-w-6xl mx-auto py-10 p-5 flex flex-col gap-6 md:flex-row">
+          <div className="flex items-center justify-center md:justify-start md:w-1/2">
+            <img
+              src={app_screen}
+              alt="app_screen"
+              loading="lazy"
+              className="w-10/12 h-1/3 md:w-auto md:h-auto rounded-lg shadow-lg object-contain"
+            />
           </div>
           <div className="flex flex-col gap-5 justify-center md:w-1/2">
-            <h1 className="text-4xl text-center md:text-left font-bold max-w-lg leading-tight">
+            <h1 className="text-4xl text-center lg:text-left font-bold max-w-xl mx-auto lg:mx-0 leading-tight">
               How to generate AI images with OpenAI
             </h1>
             <div className="flex justify-between gap-5">
-              <h1 className="text-xl font-bold text-purple-800">Step 1</h1>
+              <h1 className="text-xl font-bold text-purple-800 dark:text-purple-400">
+                Step 1
+              </h1>
               <p className="text-lg leading-tight">
                 Enter your text prompt in our text-to-image generator to convert
                 it into an image. Get creative and descriptive with your prompt.
@@ -69,7 +69,9 @@ const Home = () => {
               </p>
             </div>
             <div className="flex justify-between gap-5">
-              <h1 className="text-xl font-bold text-purple-800">Step 2</h1>
+              <h1 className="text-xl font-bold text-purple-800 dark:text-purple-400">
+                Step 2
+              </h1>
               <p className="text-lg leading-tight">
                 After entering the prompt, click the{" "}
                 <strong>"Generate Image"</strong> button to create your special
@@ -77,7 +79,9 @@ const Home = () => {
               </p>
             </div>
             <div className="flex justify-between gap-5">
-              <h1 className="text-xl font-bold text-purple-800">Step 3</h1>
+              <h1 className="text-xl font-bold text-purple-800 dark:text-purple-400">
+                Step 3
+              </h1>
               <p className="text-lg leading-tight">
                 If you are satisfied with the generated image, click on the{" "}
                 <strong>"Download Image"</strong> button to download your AI
@@ -85,19 +89,22 @@ const Home = () => {
               </p>
             </div>
             <div className="flex gap-5">
-              <h1 className="text-xl font-bold text-purple-800">Step 4</h1>
+              <h1 className="text-xl font-bold text-purple-800 dark:text-purple-400">
+                Step 4
+              </h1>
               <p className="text-lg text-left leading-tight">
                 You can also share your image to the{" "}
                 <strong className="hover:underline hover:font-bold hover:text-blue-700 transition-all">
                   <Link to="community"> "community"</Link>
                 </strong>
+                .
               </p>
             </div>
           </div>
         </div>
       </section>
       <section className="bg-gray-900 text-white">
-        <div className="max-w-6xl mx-auto p-5 py-10 mt-5 flex flex-col gap-5 md:flex-row md:justify-between">
+        <div className="max-w-6xl mx-auto p-5 py-14 flex flex-col gap-5 md:flex-row md:justify-between">
           <div className="md:w-1/2">
             <img
               src={robot}
@@ -118,10 +125,10 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="bg-slate-200 dark:bg-gray-800 dark:text-white">
         <div className="max-w-6xl p-5 py-10 mx-auto justify-between items-center flex flex-col-reverse gap-5 md:flex-row">
           <div className="flex items-center md:w-1/2">
-            <h1 className="text-sm tracking-wide md:max-w-lg sm:text-lg font-medium leading-snug text-center md:text-left">
+            <h1 className="text-sm md:max-w-lg sm:text-lg font-medium leading-snug text-center md:text-left">
               When you’re generating images with a text to image AI tool,
               getting the prompts right is essential. Rather than using a few
               vague words, it helps to use a string of descriptive phrases. For
@@ -143,9 +150,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <footer className="bg-gray-900 text-white dark:bg-gray-700 dark:text-white">
-        <div className="max-w-4xl mx-auto text-center px-4 py-6 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <div className="flex justify-center text-center">
+      <footer className="bg-gray-900 text-white dark:bg-gray-700">
+        <div className="max-w-5xl mx-auto text-center px-4 py-6 flex flex-col gap-2 md:flex-row items-center md:justify-between">
+          <div>
             <Link to="/">
               <img
                 src={white_logo}

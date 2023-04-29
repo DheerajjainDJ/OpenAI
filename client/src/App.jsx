@@ -1,27 +1,44 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./comps/Header";
-import Community from "./pages/Community";
-import CreatePost from "./pages/CreatePost";
-import Home from "./pages/Home";
-import NoMatchRoute from "./pages/NoMatchRoute";
+import React, { lazy, Suspense } from "react";
+import { createBrowserRouter, Outlet } from "react-router-dom";
+import Loader from "./comps/Loader";
+const Header = lazy(() => import("./comps/Header"));
+const Community = lazy(() => import("./pages/Community"));
+const CreatePost = lazy(() => import("./pages/CreatePost"));
+const Home = lazy(() => import("./pages/Home"));
+const NoMatchRoute = lazy(() => import("./pages/NoMatchRoute"));
 
-const App = () => {
+const AppLayout = () => {
   return (
-    <BrowserRouter>
+    <Suspense fallback={<Loader />}>
       <Header />
-      <main className="min-h-[calc(100vh-65px)] bg-slate-200 dark:bg-gray-900 dark:text-white">
-        <div className="bg-slate-200 dark:bg-gray-900 dark:text-white">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="community" element={<Community />} />
-            <Route path="create-post" element={<CreatePost />} />
-            <Route path="*" element={<NoMatchRoute />} />
-          </Routes>
-        </div>
-      </main>
-    </BrowserRouter>
+      <Outlet />
+    </Suspense>
   );
 };
 
-export default App;
+export const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/create-post",
+        element: <CreatePost />,
+      },
+      {
+        path: "/community",
+        element: <Community />,
+      },
+      {
+        path: "*",
+        element: <NoMatchRoute />,
+      },
+    ],
+  },
+]);
+
+export default AppLayout;
